@@ -7,12 +7,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # POCO Import
 find_package(Poco REQUIRED COMPONENTS Foundation Util Net)
+find_package(nlohmann_json CONFIG REQUIRED)
 
 # Redis Import
 add_library(hiredis_lib INTERFACE)
 target_include_directories(hiredis_lib INTERFACE /opt/homebrew/include)
 target_link_directories(hiredis_lib INTERFACE /opt/homebrew/lib)
 target_link_libraries(hiredis_lib INTERFACE hiredis)
+
 
 
 include_directories(${CMAKE_SOURCE_DIR}/include)

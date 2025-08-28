@@ -7,10 +7,12 @@
 
 class ProducerManager {
 public:
-    ProducerManager();
+    ProducerManager(int);
+
+    void start();
 
 private:
+    int                         m_producerCount;
     std::vector<Producer>       m_producers;
     std::vector<std::jthread>   m_producerThreads;
-
 };
